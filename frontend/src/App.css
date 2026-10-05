@@ -1,0 +1,510 @@
+/* ================================
+   GLOBAL APP
+================================ */
+
+.app {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(99, 102, 241, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(14, 165, 233, 0.10), transparent 28%),
+        #f5f7fb;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.app-header {
+    position: relative;
+    overflow: hidden;
+    padding: 55px 20px 65px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #312e81 0%,
+        #4f46e5 45%,
+        #2563eb 100%
+    );
+}
+
+.app-header::before,
+.app-header::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.app-header::before {
+    width: 280px;
+    height: 280px;
+    top: -150px;
+    left: -80px;
+}
+
+.app-header::after {
+    width: 350px;
+    height: 350px;
+    right: -120px;
+    bottom: -220px;
+}
+
+.app-header h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.app-header p {
+    position: relative;
+    z-index: 1;
+    margin: 12px 0 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 92%;
+    max-width: 1250px;
+    margin: -30px auto 70px;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.user-form,
+.user-list {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06),
+        0 2px 8px rgba(15, 23, 42, 0.03);
+
+    backdrop-filter: blur(10px);
+}
+
+.user-form h2,
+.user-list h2 {
+    margin: 0 0 22px;
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.user-form form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.user-form input,
+.user-form select {
+    width: 100%;
+    padding: 13px 15px;
+
+    border: 1px solid #dbe2ea;
+    border-radius: 10px;
+
+    background: #f8fafc;
+    color: #1e293b;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.user-form input::placeholder {
+    color: #94a3b8;
+}
+
+.user-form input:hover,
+.user-form select:hover {
+    background: #ffffff;
+}
+
+.user-form input:focus,
+.user-form select:focus {
+    background: #ffffff;
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* ================================
+   FORM BUTTONS
+================================ */
+
+.user-form button {
+    border: none;
+    border-radius: 10px;
+
+    padding: 13px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #4f46e5,
+        #2563eb
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px rgba(79, 70, 229, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.user-form button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(79, 70, 229, 0.28);
+}
+
+.user-form button:active {
+    transform: translateY(0);
+}
+
+.user-form button[type="button"] {
+    background: #64748b;
+    box-shadow: none;
+}
+
+.user-form button[type="button"]:hover {
+    background: #475569;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-box {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.search-box::before {
+    content: "⌕";
+
+    position: absolute;
+    left: 17px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #64748b;
+    font-size: 22px;
+
+    pointer-events: none;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 18px 15px 48px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.05);
+
+    transition: 0.2s ease;
+}
+
+.search-box input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.10),
+        0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+
+/* ================================
+   TABLE
+================================ */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    min-width: 900px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+thead th {
+    padding: 15px;
+
+    background: #f8fafc;
+
+    color: #475569;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tbody td {
+    padding: 16px 15px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #eef2f7;
+
+    background: white;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover td {
+    background: #f8faff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ================================
+   STATUS BADGES
+================================ */
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 11px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.status.active {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.status.active::before {
+    background: #10b981;
+}
+
+.status.inactive {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.status.inactive::before {
+    background: #ef4444;
+}
+
+
+/* ================================
+   ACTION BUTTONS
+================================ */
+
+.edit-btn,
+.delete-btn {
+    border: none;
+
+    padding: 8px 13px;
+
+    border-radius: 8px;
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.edit-btn {
+    background: #f59e0b;
+    box-shadow: 0 3px 8px rgba(245, 158, 11, 0.18);
+}
+
+.edit-btn:hover {
+    background: #d97706;
+    transform: translateY(-1px);
+}
+
+.delete-btn {
+    background: #ef4444;
+    box-shadow: 0 3px 8px rgba(239, 68, 68, 0.18);
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   EMPTY / LOADING
+================================ */
+
+.no-users,
+.loading {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.error-message {
+    margin-bottom: 20px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    background: #fef2f2;
+    color: #b91c1c;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   RESPONSIVE - TABLET
+================================ */
+
+@media (max-width: 950px) {
+
+    .user-form form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app-header h1 {
+        font-size: 36px;
+    }
+}
+
+
+/* ================================
+   RESPONSIVE - MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .app-header {
+        padding: 40px 18px 55px;
+    }
+
+    .app-header h1 {
+        font-size: 29px;
+    }
+
+    .app-header p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 94%;
+        margin-top: -25px;
+    }
+
+    .user-form,
+    .user-list {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .user-form form {
+        grid-template-columns: 1fr;
+    }
+
+    .user-form h2,
+    .user-list h2 {
+        font-size: 19px;
+    }
+
+    .search-box input {
+        font-size: 13px;
+    }
+}
