@@ -75,7 +75,7 @@ user-management-mern/
 │   │   └── userController.js
 │   │
 │   ├── models/
-│   │   └── User.js
+│   │   └── user.js
 │   │
 │   ├── routes/
 │   │   └── userRoutes.js
